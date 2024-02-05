@@ -1,9 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -39,11 +42,11 @@ func iniciaMonitoramento() {
 	fmt.Print("\n")
 	fmt.Println("Monitorando...")
 
-	sites := []string{"https://www.google.com.br", "https://www.youtube.com.br", "https://www.instagram.com/"}
+	sites := leSitesDoArquivo()
 
 	for i := 0; i < monitoramentos; i++ {
 		for i, site := range sites {
-			fmt.Println("Testando o site", i, ":", site)
+			fmt.Println("Testando o site", (i + 1), ":", site)
 			time.Sleep(1 * time.Second)
 			testaSite(site)
 		}
@@ -78,8 +81,26 @@ func leSitesDoArquivo() []string {
 
 	var sites []string
 
-	arquivo, _ := os.Open("sites.txt")
-	fmt.Println(arquivo)
+	arquivo, err := os.Open("sites.txt")
+
+	if err != nil {
+		fmt.Println("Ocorreu um erro:", err)
+	}
+
+	leitor := bufio.NewReader(arquivo)
+
+	for {
+		linha, err := leitor.ReadString('\n')
+		linha = strings.TrimSpace(linha)
+
+		sites = append(sites, linha)
+		if err == io.EOF {
+			break
+		}
+
+	}
+
+	arquivo.Close()
 
 	return sites
 }
