@@ -1,0 +1,12 @@
+06/02/2024 10:36:07 - https://www.google.com.br - online: true
+06/02/2024 10:36:09 - https://www.youtube.com.br - online: true
+06/02/2024 10:36:10 - https://www.instagram.com - online: true
+06/02/2024 10:36:11 - https://www.casadocodigo.com.br - online: true
+06/02/2024 10:36:18 - https://www.google.com.br - online: true
+06/02/2024 10:36:19 - https://www.youtube.com.br - online: true
+06/02/2024 10:36:20 - https://www.instagram.com - online: true
+06/02/2024 10:36:21 - https://www.casadocodigo.com.br - online: true
+06/02/2024 10:36:27 - https://www.google.com.br - online: true
+06/02/2024 10:36:29 - https://www.youtube.com.br - online: true
+06/02/2024 10:36:30 - https://www.instagram.com - online: true
+06/02/2024 10:36:31 - https://www.casadocodigo.com.br - online: true
